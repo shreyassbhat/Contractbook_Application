@@ -1,0 +1,43 @@
+body{
+    background:url(../img/bod.jpg) repeat;
+}
+
+.btn-xlarge {
+    padding: 28px 48px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+.btn-xlarge1 {
+    padding: 28px 35px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+.btn-xlarge2 {
+    padding: 38px 48px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+
+
+.be-detail-header { border-bottom: 1px solid #edeff2; margin-bottom: 50px; }
+
+.parallxeffect{
+    height: 700px;
+    margin: 0;
+    padding: 0;
+}

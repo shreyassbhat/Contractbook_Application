@@ -1,0 +1,116 @@
+body {
+  background: #fff;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+    background: url("../img/401.jpg")no-repeat center center fixed;
+    
+    background-size: cover;
+    
+}
+
+input, button {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+ .loggedin-div {
+  width: 30%;
+  margin: 0px auto;
+  margin-top: 10px;
+  padding: 20px;
+  display: none;
+}
+
+.main-div{
+    width: 30%;
+  margin: 0px auto;
+  margin-top: 100px;
+    margin-bottom: 60px;
+  padding: 20px;
+  display: none;
+}
+
+.main-div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.main-div input:focus {
+  border: 1px solid #777;
+}
+
+.main-div button {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+}
+
+.loggedin-div button{
+
+/*    background: #5d8ffc;*/
+/*  color: #fff;*/
+/*  border: 1px solid #5d8ffc;*/
+  border-radius: 5px;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+
+}
+
+.main-div button:hover, .loggedin-div button:hover {
+/*  background: #fff;*/
+/*  color: #5d8ffc;*/
+  border: 1px solid  #fff;
+/*  cursor: pointer;*/
+}
+
+.btn-xlarge {
+    padding: 28px 48px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+.btn-xlarge1 {
+    padding: 28px 75px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+.btn-xlarge2 {
+    padding: 28px 75px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}

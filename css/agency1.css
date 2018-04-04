@@ -1,0 +1,29 @@
+.btn-xlarge {
+    padding: 28px 48px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+.btn-xlarge1 {
+    padding: 28px 75px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
+
+.btn-xlarge2 {
+    padding: 28px 75px;
+    font-size: 20px;
+    line-height: normal;
+    -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+            border-radius: 20px;
+/*    text-decoration: none;*/
+}
