@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<!-- <link rel="stylesheet" href="css/uploadWorkerAgency.css"> -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<title>Minimum Bootstrap HTML Skeleton</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+<!--
+    <div class="navbar-header">
+
+    </div>
+-->
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+            <li><h3><strong><span class="glyphicon glyphicon-user blue"></span>Upload Labour Information </strong></h3></li>
+         </ul>
+      </div>
+    </div>
+    <div class="pull-right">
+        <h3><strong><a style="color:0099FF" href="Logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></strong></h3>
+</div>
+
+  </div>
+</nav>
+      <div class="container" style="margin-top:130px;">
+        <form class="form-horizontal" id="contactForm">
+
+
+
+          <div id="edit_farmer" style="display:none"></div>
+          <div class="row">
+            <div class="col-md-2 panel panel-heading">Contact Information</div>
+            <div class="col-md-4 panel panel-heading" style="display:none; color:red" id="contact_error"></div>
+          </div>
+
+          <div class="row form-group">
+            <label class="col-md-2 control-label" for="mobile">Contact No.</label>
+            <div class="col-md-3">
+    <div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-phone"></i>
+			</span>
+              <input id="contact" maxlength="10" name="contact" placeholder="xxxxxxxxxxxx" class="form-control input-md ac_mobile" type="number" value="mobile" >
+
+
+
+
+		</div>
+	</div>
+            <label class="col-md-2 control-label" for="sms">Language</label>
+            <div class="col-md-3">
+		<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-list"></i>
+			</span>
+              <select id="Cities" name="language" class="form-control input-md" onChange="OnDropDownChange(this); ">
+                <option value="english">English</option>
+
+                <option value="hindi">Hindi</option>
+                <option value="kannada">kannada</option>
+                <option value="marathi">Marathi</option>
+              </select>
+            </div>
+		</div>
+
+
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-8" id="mobile_numbers"></div>
+          </div>
+
+          <div class="row form-group">
+            <label class="col-md-2 control-label" for="first_name">First Name</label>
+            <div class="col-md-3">
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-user"></i>
+			</span>
+              <input id="firstname" name="firstname" placeholder="" class="form-control input-md" type="text">
+            </div>
+        </div>
+
+<!--
+            <label class="col-md-1 control-label" for="middle_name">Mid Name</label>
+            <div class="col-md-2">
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-user"></i>
+			</span>
+            <input id="middle_name" name="middle_name" placeholder="" class="form-control input-md" type="text">
+            </div>
+		</div>
+-->
+            <label class="col-md-2 control-label" for="last_name">Last Name</label>
+            <div class="col-md-3">
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-user"></i>
+			</span>
+              <input id="lastname" name="lastname" placeholder="" class="form-control input-md" type="text">
+            </div>
+	</div>
+          </div>
+
+          <div class="row form-group">
+            <label class="col-md-2 control-label" for="farmer_type"> Education </label>
+            <!-- <div class="col-md-4">
+              <label class="radio-inline"><input type="radio" id="x1" name="rate" value="Fixed Rate" >10th</label>
+              <label class="radio-inline"><input ttype="radio" id="x1" name="rate" value="Fixed Rate" >10th to +2</label>
+              <label class="radio-inline"><input type="radio" id="x1" name="rate" value="Fixed Rate" >Graduate</label>
+							           <label class="radio-inline"><input type="radio" name="farmer_type" value="Supplier"></label>
+            </div> -->
+						<div class="col-md-3">
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-user"></i>
+			</span>
+              <input id="education" name="education" placeholder="" class="form-control input-md" type="text">
+            </div>
+	</div>
+
+            <label class="col-md-1 control-label" for="description">Description</label>
+            <div class="col-md-4">
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-pencil"></i>
+			</span>
+              <textarea class="form-control" id="description" name="description" placeholder="Description"></textarea>
+            </div></div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="smartphone">Computer Skill</label>
+            <!-- <div class="col-md-3">
+
+                <label class="radio-inline"><input type="radio" name="theRadioGroupName" value="Yes">Yes</label>
+                <label class="radio-inline"><input type="radio" name="theRadioGroupName" value="No">No</label>
+                <label class="radio-inline"><input type="radio" name="theRadioGroupName" value="Don't Know">Don't Know</label>
+
+            </div> -->
+
+						<div class="col-md-3">
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-user"></i>
+			</span>
+              <input id="computer" name="computer" placeholder="" class="form-control input-md" type="text">
+            </div>
+	</div>
+          </div>
+
+
+
+
+          <div class="row">
+            <div class="col-md-2 panel panel-heading">Address Information</div>
+            <div class="col-md-4 panel panel-heading" style="display:none; color:red" id="address_error"></div>
+          </div>
+
+          <div class="row form-group">
+            <label class="col-md-2 control-label" for="village">Village</label>
+            <div class="col-md-2">
+		<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-home"></i>
+			</span>
+
+              <input id="village" name="village" placeholder="" class="form-control input-md ac_village" required="" type="text">
+            </div> </div>
+
+            <label class="col-md-1 control-label" for="state">State</label>
+            <div class="col-md-2">
+		<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-list"></i>
+			</span>
+
+
+
+
+
+
+              <input id="state" name="state" placeholder="" class="form-control input-md ac_state" required="" type="text">
+            </div></div>
+
+            <label class="col-md-1 control-label" for="district">District</label>
+            <div class="col-md-2">
+		<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-list"></i>
+			</span>
+
+              <input id="district" name="district" placeholder="" class="form-control input-md ac_district" required="" type="text">
+            </div>
+		</div>
+          </div>
+
+<!--
+          <div class="row form-group">
+
+
+
+
+            <label class="col-md-2 control-label" for="post_office">Post Office</label>
+            <div class="col-md-3">
+              <input id="post_office" name="post_office" placeholder="Post Office " class="form-control input-md ac_post_office" required="" type="text">
+            </div>
+
+          </div>
+-->
+
+
+
+
+
+          <div class="row form-group">
+            <label class="col-md-2 control-label" for="pin_code">Pin Code</label>
+            <div class="col-md-2">
+              <input id="pincode" name="pincode" placeholder="Enter Zipcode"  class="form-control input-md" required="" type="text">
+            </div>
+
+            <label class="col-md-3 control-label" for="street_address">Address Line </label>
+            <div class="col-md-5">
+		<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-pencil"></i>
+			</span>
+              <textarea class="form-control" id="address" name="address" placeholder="Addess Details..."></textarea>
+            </div>
+	</div>
+          </div>
+
+
+
+          <div class="form-group row">
+            <div class="col-md-8 text-center">
+              <!-- <button id="save" name="save" class="btn btn-lg btn-success"> Save Labour Information</button> -->
+							<!-- <input class="btn btn-lg btn-success " type="submit" value="Save Labour Information" name="register" > -->
+							<button  class="btn btn-lg btn-success " type="submit">Submit</button>
+              <button class="btn btn-lg btn-danger" type="button" onclick=history.go(-1)> Cancel </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+<script  src="js/uplaodWorkerAgency.js">
+
+</script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	</script>
+
+</body>
+
+</html>
+
+
+<?php
+
+include 'uplaodWorkerAgency1.php';
+
+ ?>

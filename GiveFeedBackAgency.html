@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Acme Web Design</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/giveFeedBack1.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="brand"><span>Hire A Worker</span></h1>
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>Upload Work Details</h3>
+        
+      </div>
+      <div class="contact">
+        <h2>Give Feed Back Here </h2>
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+              <label><strong>Enter Worker Phone Number</strong></label>
+            <input type="text" name="phone" id="phone" required>
+          </p>
+<!--
+          <p>
+            <label>Zip Code</label>
+            <input type="text" name="zip" id="zip">
+          </p>
+          <p>
+            <label>Date of Commencment</label>
+            <input type="text" name="datein" id="datein" required>
+          </p>
+          <p>
+            <label>Date of Completion</label>
+            <input type="text" name="dateout" id="dateout">
+          </p>
+-->
+          <p class="full">
+              <label><strong>Message Give Your Feed back Here</strong></label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!--  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>-->
+ <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <script src="js/GiveFeedBackAgency1.js"
+  "></script>
+</body>
+</html>

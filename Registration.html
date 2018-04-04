@@ -1,0 +1,102 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist\css\bootstrap.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    <title>Registration</title>
+</head>
+<style>
+    .login-panel {
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+    body{
+        background: url("./img/601.jpeg")no-repeat center center fixed;
+        background-size: cover;
+    }
+    .btn-lg{
+         background: #000;
+      color: aliceblue;
+    }
+
+</style>
+<body>
+
+<div class="container text-center"><!-- container class is used to centered  the body of the browser with some decent width-->
+    <div class="row"><!-- row class is used for grid system in Bootstrap-->
+        <div class="col-md-6 col-md-offset-6"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->
+            <div class="login-panel panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Agency Registration</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="post" action="" id="contactForm">
+<!--                        <fieldset>-->
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Agency name" name="name" id="name" type="text" autofocus>
+                            </div>
+
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Agency E-mail" name="email" id="email" type="email" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Agency Password" name="pass" id="password" type="password" value="">
+                            </div>
+
+                             <div class="form-group">
+                                <input class="form-control" placeholder="Conform Password" name="re_pass" id="repassword" type="password" value="">
+                            </div>
+
+                             <div class="form-group">
+                                <input class="form-control" placeholder="Phone Number" name="phone" id="phone" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Zip Code" name="name" id="zip" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="City / Village" name="name" id="city" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Address" name="name" id="address" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Enter the No Of Labour" name="name" id="noOfLabour" type="text" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Enter the No Of Skilled Labour" name="name" id="noOfSkilledLabour" type="text" autofocus>
+                            </div>
+                            
+                            
+
+
+<!--                            /* <input class="btn btn-lg btn-success btn-block" type="submit" value="register" name="register" > */-->
+                        <button  class="btn btn-lg  form-control" type="submit"><strong>Register</strong></button>
+<!--                        </fieldset>-->
+                    </form>
+                    <center><b>Already registered ?</b> <br><b></b><a href="Agency1.html">Login here</a></center><!--for centered text-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsdP_eRVqXCj1b6pl1HchKOsBa9YPXBUg",
+    authDomain: "sih2018-c5f85.firebaseapp.com",
+    databaseURL: "https://sih2018-c5f85.firebaseio.com",
+    projectId: "sih2018-c5f85",
+    storageBucket: "",
+    messagingSenderId: "482251589"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="js/Registration13.js"></script>
+</body>
+
+</html>

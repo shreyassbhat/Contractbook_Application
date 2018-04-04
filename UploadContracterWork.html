@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="img/FeviconForSite.png" type="" sizes="16x16">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hire A Worker</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="css/UploadContracterWork1.css">
+</head>
+<body>
+  <div class="container">
+    
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>Upload Work Details</h3>
+        
+      </div>
+      <div class="contact">
+        <h3>Upload Construction Details</h3>
+        <div class="alert">Your request has been received </div>
+        <form id="contactForm">
+         <p>
+             <label><strong>Construction Name</strong></label>
+            <input type="text" name="name" id="name" placeholder="Enter Contractor Name" required>
+          </p>
+          <p>
+              <label><strong>Area of Construction</strong></label>
+            <input type="text" name="work" id="work" placeholder="Enter Area of Work" required>
+          </p>
+          <p>
+              <label><strong>Zip Code</strong></label>
+            <input type="text" name="zip" id="zip" placeholder="Enter Zip Code">
+          </p>
+          <p>
+              <label><strong>Date of Commencment</strong></label>
+            <input type="text" name="datein" id="datein" placeholder="Enter Date of Commencement Ex:MM/DD/YYYY" required>
+          </p>
+          <p>
+              <label><strong>Date of Completion</strong></label>
+            <input type="text" name="dateout" id="dateout" placeholder="Enter Date of Completion Ex:MM/DD/YYYY">
+          </p>
+<!--
+          <p class="full">
+            <label>Message</label>
+            <textarea name="message" rows="5" id="message"></textarea>
+          </p>
+-->
+          <p class="full">
+            <button type="submit">Submit</button>
+            <br><br>
+<!--            <button type="submit" onclick="location.href = 'searchAgency.html';">Search For Agency</button>-->
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!--  <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>-->
+<!-- <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>-->
+ 
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsdP_eRVqXCj1b6pl1HchKOsBa9YPXBUg",
+    authDomain: "sih2018-c5f85.firebaseapp.com",
+    databaseURL: "https://sih2018-c5f85.firebaseio.com",
+    projectId: "sih2018-c5f85",
+    storageBucket: "sih2018-c5f85.appspot.com",
+    messagingSenderId: "482251589"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="js/UploadContracterWork11.js"></script>
+</body>
+</html>

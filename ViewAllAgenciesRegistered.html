@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="icon" href="img/FeviconForSite.png" type="" sizes="16x16">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate1.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	
+	<!-- footer Starts	-->
+<link rel="stylesheet" href="css/footer2.css">
+<link rel="stylesheet" href="css/dropdown.css">
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- footer ends-->
+	
+<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsdP_eRVqXCj1b6pl1HchKOsBa9YPXBUg",
+    authDomain: "sih2018-c5f85.firebaseapp.com",
+    databaseURL: "https://sih2018-c5f85.firebaseio.com",
+    projectId: "sih2018-c5f85",
+    storageBucket: "sih2018-c5f85.appspot.com",
+    messagingSenderId: "482251589"
+  };
+  firebase.initializeApp(config);
+</script>
+
+	<title>Hire A Worker</title>
+
+	<!--  -->
+
+	<style>
+      .bg{
+            background-color: yellow;
+            text-align: center;
+        }
+        
+	</style>
+
+</head>
+
+<body>
+    
+    <div class="jumbotron text-center header">
+    <div class="col-md-2"><img src="img/logo1.png" alt="" class="animated infinite bounce img-circle"></div>
+     
+      <h1><strong>ContractBook</strong></h1> 
+          
+      <div class="col-md-4 float-md-right" id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'gu,hi,kn,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      
+  </div>
+
+	<div class="container">
+	
+	<div class="row">
+       <div class="col-md-3 panel panel-heading bg"><strong>Detail Infromation About Contractor</strong></div>
+            <div class="col-md-4 panel panel-heading" style="display:none; color:red" id="contact_error"></div>
+          </div>
+	<br><br>
+<div class="col-md-6" >
+<!--
+   Enter the City: <input type="text" id="city">
+   <button  class=" btn btn-danger" onclick="myFunction()">Search</button>
+-->
+      
+      
+<!--      <form autocomplete="off" action="">-->
+  <div class="autocomplete" style="width:300px;">
+    <input id="myInput" type="text" name="myCountry" placeholder="Enter City Name to Search" >
+  </div>
+<!--  </form>-->
+  &nbsp;&nbsp;&nbsp;<button  class=" btn btn-danger" onclick="myFunction()">Search</button>
+  <br>
+  <br>
+
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+      });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = ["	Bagalkot","Bengaluru","Belagavi","	Ballari","Vijayapur","Chikkamagaluru","Chitradurga","Mangaluru","Davangere","Dharwad","	Kalaburagi","Hassan","Mandya","Mysuru","Shivamogga","Mumbai","Pune","Nagpur","Nashik","	Thane","	Navi Mumbai","Visakhapatnam","Gandhinagar","Surat"," Rajkot","Kochi"," Chennai","Jaipur","Udaipur,","Muzaffarpur","Bhagalpur"," Patna","Bhubaneshwar","Guwahati","Dehradun","Ranchi","Chandigarh","Raipur","New Delhi","Panaji","Shillong","Kohima","Agartala","Delhi"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+</script>
+      
+      
+      
+      
+       
+        </div>
+        <div class="col-md-6">
+            <button  class="btn btn-primary" onclick="location.href = 'GiveFeedBackAgency.html';"    >Click here to Give Feed Back to Agency </button>
+        </div>
+        
+<!--        <button class="btn btn-primary" onclick="myFunction1()">Give Rating To Agency</button>-->
+        
+        
+        
+        <br><br><br>
+   
+   <table style="width:100%" id="ex-table" border="5" text-align="center" class="table table-striped">
+   <thead>
+  <tr >
+    <th> Name of Agency</th>
+    <th>Email</th>
+    <th>Phone</th> 
+    <th>Zip Code</th>
+    <th>No Of Labours</th>
+    <th>No of Skilled Labours</th>
+    <th>City/Village</th>
+<!--    <th id="demo">Rating</th>-->
+    
+    
+<!--    <th>City</th>-->
+   
+      
+      <script>
+//    function visitPage(){
+//        
+//        var city =  document.getElementById("city").value;
+//        
+//        window.location="https://www.google.co.in/maps/place/"+city;
+//    }
+</script>
+       
+      
+       
+      
+    <th>Address&nbsp;<button  class="btn btn-primary" id="cityprint" onclick="visitPage();" value="Davangere"   >Get Direction </button></th>
+    
+    
+    
+<!--
+    <th>District</th>
+    <th>Education</th>
+    
+    <th>Pincode</th> 
+    <th>Langauge</th>
+    <th>State</th>
+    <th>Village</th>
+    <th>Address</th>
+-->
+<!--    <th>education</th>-->
+<!--    <th>firstname</th>-->
+       </tr>
+       </thead>
+ </table> 
+
+<script>
+    var address;
+    
+    
+   
+
+    function myFunction() {
+        
+         
+        
+    var database = firebase.database().ref().child("AgencyRegistration");
+    database.on('value', function(snapshot){
+        if(snapshot.exists()){
+            var content = '';
+            snapshot.forEach(function(data){
+//                data.forEach(function(data1){
+                     console.log(data.key+': '+data.val());
+                var val = data.val();
+                var city = document.getElementById("myInput").value;
+                console.log(city);
+                if(city == val.city)
+                    {
+                        console.log(val.city);
+                address = val.address;
+                content +='<tr>';
+                
+                content += '<td>' + val.name + '</td>';
+                content += '<td>' + val.firstname + '</td>';
+                content += '<td>' + val.phone + '</td>';
+                content += '<td>' + val.zip + '</td>';
+                        content += '<td>' + val.noOfLabour + '</td>';
+                content += '<td>' + val.noOfSkilledLabour + '</td>';
+                        
+                content += '<td>' + val.city + '</td>';
+                        content += '<td>' + val.address + '</td>';
+                        
+                        
+                
+//                
+                
+//                content += '<td>' + val.state + '</td>';
+//                content += '<td>' + val.state + '</td>';
+//                content += '<td>' + val.village + '</td>';
+//                 content += '<td>' + val.address + '</td>';
+                
+                        
+                content += '</tr>';
+//            });
+                    }
+                else{
+//                    alert("Address Not Found in the Database");
+                }
+                 });
+            $('#ex-table').append(content);
+        }
+    });
+         }
+    
+    function visitPage(){
+        
+//        var city =  document.getElementById("city").value;
+        
+        window.location="https://www.google.co.in/maps/place/"+address;
+    }
+</script>
+   
+   
+   
+    </div>
+    
+    
+     <div class="footer">
+      <div class="container">
+             <span>
+             <p class="text">© 2018 SIH, All rights reserved</p>
+              <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-facebook fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-twitter fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-youtube-play fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-rss fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-vine fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-flickr fa-3x fa-fw"></i></a>
+              <a href='#'><i class="fa fa-linkedin fa-3x fa-fw"></i></a>
+            </span>
+      </div>
+    </div>
+
+<!--<script src="test.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	</script>
+
+</body>
+
+</html>

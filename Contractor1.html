@@ -1,0 +1,89 @@
+<html>
+<head>
+ 
+ <link rel="icon" href="img/FeviconForSite.png" type="" sizes="16x16">
+  <title>ContractBook</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/Contractor2new.css" />
+  
+  
+  
+  <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/Contractor1.css">
+
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+    <link href="https://fonts.googleapis.com/css?family=Joti+One" rel="stylesheet">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" class="css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <div id="login_div" class="main-div"><div class="col-md-11 float-md-right" id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'gu,hi,kn,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		
+   <p style="text-align:center"><img src="img/contracterlogin1.png"></p>
+      <center> <h2><strong>Login As Contractor </strong></h2> </center>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+      <button onclick="login() "><strong>Login</strong></button>
+     <br>
+      <strong><a href="RegistrationContractor.html">New User?  </a>Signup to continue</strong>
+  </div>
+
+  <div id="user_div" class="loggedin-div">
+      <h3 align="center"><strong>Welcome User</strong></h3>
+    <p align="center" ><strong id="user_para" ></strong></p>
+   
+    
+    
+    
+    
+    
+    
+     <br><br>
+          <button type="submit" onclick="location.href = 'UploadContracterWork.html';" class="btn-xlarge btn-primary  "><i class="fa fa-upload" aria-hidden="true"></i> Upload Work</button><br><br><br><br>
+
+      <button type="button" onclick="location.href = 'viewContracterUpload.html';" class="btn-xlarge1 btn-success"><i class="fab fa-rupee-sign" aria-hidden="true"></i> View My Upload</button><br><br><br><br>
+      <button type="button" onclick="location.href = 'ViewAllAgenciesRegistered.html';" class="btn-xlarge2 btn-danger"><i class="fa fa-briefcase" aria-hidden="true"></i> View Agencies</button>
+      <br><br><br>
+      <div >
+          <button onclick="logout()"><Strong>Logout</Strong></button>
+    </div>
+    
+    
+    
+  </div>
+
+
+
+  
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsdP_eRVqXCj1b6pl1HchKOsBa9YPXBUg",
+    authDomain: "sih2018-c5f85.firebaseapp.com",
+    databaseURL: "https://sih2018-c5f85.firebaseio.com",
+    projectId: "sih2018-c5f85",
+    storageBucket: "sih2018-c5f85.appspot.com",
+    messagingSenderId: "482251589"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="js/Contractor23.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA-OsXh94uLy7s_qe9TjO5KzwGgwO9-r-E",
+    authDomain: "sih2018-8f87f.firebaseapp.com",
+    databaseURL: "https://sih2018-8f87f.firebaseio.com",
+    projectId: "sih2018-8f87f",
+    storageBucket: "sih2018-8f87f.appspot.com",
+    messagingSenderId: "885370490713"
+  };
+  firebase.initializeApp(config);
+</script>
+
+	<title>Minimum Bootstrap HTML Skeleton</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+   <div class="col-md-11 float-md-right" id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'gu,hi,kn,mr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+		
+
+   
+   <table style="width:100%" id="ex-table" border="5" align="center" class="table table-striped" >
+<thead>
+     <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Computer</th> 
+    <th>Contact</th>
+    <th>Description</th>
+    <th>District</th>
+    <th>Education</th>
+    
+    <th>Pincode</th> 
+    <th>Langauge</th>
+    <th>State</th>
+    <th>Village</th>
+    <th>Address</th>
+<!--    <th>education</th>-->
+<!--    <th>firstname</th>-->
+       </tr>
+       </thead>
+ </table> 
+
+<script>
+    var database = firebase.database().ref().child("contacts2");
+    database.on('value', function(snapshot){
+        if(snapshot.exists()){
+            var content = '';
+            snapshot.forEach(function(data){
+//                data.forEach(function(data1){
+                     console.log(data.key+': '+data.val());
+                var val = data.val();
+                content +='<tr>';
+               
+                content += '<td>' + val.firstname + '</td>';
+                content += '<td>' + val.lastname + '</td>';
+                content += '<td>' + val.computer + '</td>';
+                content += '<td>' + val.contact + '</td>';
+                content += '<td>' + val.description + '</td>';
+                content += '<td>' + val.district + '</td>';
+                content += '<td>' + val.education + '</td>';
+                
+                content += '<td>' + val.pincode + '</td>';
+                content += '<td>' + val.selectedValue + '</td>';
+                content += '<td>' + val.state + '</td>';
+                content += '<td>' + val.village + '</td>';
+                 content += '<td>' + val.address + '</td>';
+//                content += '<td>' + val.uemail + '</td>';
+                content += '</tr>';
+//            });
+                 });
+            $('#ex-table').append(content);
+        }
+    });
+</script>
+   
+   
+   
+    </div>
+
+<!--<script src="test.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="icon" href="img/FeviconForSite.png" type="" sizes="16x16">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCsdP_eRVqXCj1b6pl1HchKOsBa9YPXBUg",
+    authDomain: "sih2018-c5f85.firebaseapp.com",
+    databaseURL: "https://sih2018-c5f85.firebaseio.com",
+    projectId: "sih2018-c5f85",
+    storageBucket: "",
+    messagingSenderId: "482251589"
+  };
+  firebase.initializeApp(config);
+</script>
+
+	<title>Hire A Worker</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+<div >
+   Enter Zip Code: <input type="text" id="zip">
+   &nbsp;&nbsp;&nbsp;<button  class="btn-danger" onclick="myFunction()">Search</button>
+        </div>
+      <div class="col-lg-12"><br><br></div>  
+   <table style="width:100%" id="ex-table" border="5" align="center" class="table table-striped">
+   <thead>
+  <tr >
+   <th class="text-center">Contractor</th>
+    <th class="text-center">Area of Work</th>
+    <th class="text-center">Zip Code </th>
+    <th class="text-center">Date of Commencment</th> 
+    <th class="text-center">Date of Completion</th>
+    
+<!--
+    <th>Description</th>
+    <th>District</th>
+    <th>Education</th>
+    
+    <th>Pincode</th> 
+    <th>Langauge</th>
+    <th>State</th>
+    <th>Village</th>
+    <th>Address</th>
+-->
+<!--    <th>education</th>-->
+<!--    <th>firstname</th>-->
+       </tr>
+       </thead>
+ </table> 
+
+<script>
+    
+    function myFunction() {
+    
+
+    var database = firebase.database().ref().child("workload");
+    database.on('value', function(snapshot){
+        if(snapshot.exists()){
+            var content = '';
+            snapshot.forEach(function(data){
+//                data.forEach(function(data1){
+                     console.log(data.key+': '+data.val());
+                var val = data.val();
+                var zip = document.getElementById("zip").value;
+                console.log(zip);
+                if(zip == val.Zipcode)
+                    {
+                        
+                    
+                content +='<tr>';
+               content += '<td>' + val.ContractorName + '</td>';
+                content += '<td>' + val.Area + '</td>';
+                content += '<td>' + val.Zipcode + '</td>';
+                content += '<td>' + val.CommenceDate + '</td>';
+                content += '<td>' + val.Completedate + '</td>';
+//                content += '<td>' + val.description + '</td>';
+//                content += '<td>' + val.district + '</td>';
+//                content += '<td>' + val.education + '</td>';
+//                
+//                content += '<td>' + val.pincode + '</td>';
+//                content += '<td>' + val.selectedValue + '</td>';
+//                content += '<td>' + val.state + '</td>';
+//                content += '<td>' + val.village + '</td>';
+//                 content += '<td>' + val.address + '</td>';
+//                content += '<td>' + val.uemail + '</td>';
+                content += '</tr>';
+                        }
+//            });
+                 });
+            $('#ex-table').append(content);
+        }
+    });
+    }
+</script>
+   
+   
+   
+    </div>
+
+<!--<script src="test.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+	</script>
+
+</body>
+
+</html>
